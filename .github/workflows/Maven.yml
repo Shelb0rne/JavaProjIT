@@ -39,7 +39,7 @@ jobs:
     - name: Notify on Slack
       uses: voormedia/ci-slack-notification@main
       with:
-        token: ${{ secrets.GH_CLONE_TOKE }}
+        token: ${{ secrets.GH_CLONE_TOKEN }}
         slack-webhook: ${{ secrets['T072MQT2QHE/B071Z4JTQ58/GhIgGwdvpBUHotjjAwjbiord'] }}    
       
   notify: 
