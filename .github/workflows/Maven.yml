@@ -29,5 +29,17 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+  notify: 
+   
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Send Telegram Message
+        uses: cbrgm/telegram-github-action@v1
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{ @Shelb0rne }}
+          message: "Все работает"
 
    
