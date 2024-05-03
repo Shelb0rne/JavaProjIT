@@ -30,6 +30,18 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
+  slack-notification:
+  
+   runs-on: ubuntu-latest 
+   needs: build
+   if: ${{ always() }}
+   steps:
+    - name: Notify on Slack
+      uses: voormedia/ci-slack-notification@main
+      with:
+        token: ${{ secrets.GH_CLONE_TOKEN }}
+        slack-webhook: ${{ secrets.SLACK_WEBHOOK }}    
+      
   notify: 
    
     runs-on: ubuntu-latest
