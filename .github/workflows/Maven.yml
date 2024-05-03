@@ -38,7 +38,7 @@ jobs:
       - name: Send Telegram Message
         uses: cbrgm/telegram-github-action@v1
         with:
-          token: ${{ secrets.GitHub }}
+          token: ${{ secrets.getUpdates }}
           to: ${{ secrets.Shelb0rne }}
           message: "Все работает"
 
