@@ -39,7 +39,7 @@ jobs:
         uses: cbrgm/telegram-github-action@v1
         with:
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          to: ${{ @Shelb0rne }}
+          to: ${{ Shelb0rne }}
           message: "Все работает"
 
    
