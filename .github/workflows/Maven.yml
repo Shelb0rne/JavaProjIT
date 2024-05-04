@@ -30,12 +30,14 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: Send GitHub Action trigger data to Slack workflow
-      id: slack
-      uses: slackapi/slack-github-action@v1.26.0
-      env:
-           SLACK_WEBHOOK_URL: ${{ secrets.hooks.slack.com/services/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 }}  
-      
+  send_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.T072MQT2QHE/B071Z4JTQ58/GhIgGwdvpBUHotjjAwjbiord }}  # добавьте ваш webhook URL в секреты репозитория
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Успех"}' $SLACK_WEBHOOK_URL
   notify: 
    
     
