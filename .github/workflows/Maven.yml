@@ -37,9 +37,9 @@ jobs:
    if: ${{ always() }}
    steps:
     - name: Notify on Slack
-      uses: voormedia/ci-slack-notification@main
+      uses: ./github/actions/slack-notify
       with:
-        token: ${{ secrets.GH_CLONE_TOKEN }}
+        status: SUCCESS
         slack-webhook: ${{ secrets['T072MQT2QHE/B071Z4JTQ58/GhIgGwdvpBUHotjjAwjbiord'] }}    
       
   notify: 
