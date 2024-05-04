@@ -35,9 +35,9 @@ jobs:
     steps:
       - name: Send Slack notification
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK }}  
+          SLACK_WEBHOOK_URL: ${{ secrets.SCR }}  
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"Успех"}' $SLACK
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Успех"}' $SLACK_WEBHOOK_URL
   notify: 
    
     
