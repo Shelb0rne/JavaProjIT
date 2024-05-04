@@ -34,7 +34,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.26.0
       env:
-           SLACK_WEBHOOK_URL: ${{ secrets.['T072MQT2QHE/B071Z4JTQ58/GhIgGwdvpBUHotjjAwjbiord'] }}  
+           SLACK_WEBHOOK_URL: ${{ secrets.T072MQT2QHE/B071Z4JTQ58/GhIgGwdvpBUHotjjAwjbiord }}  
       
   notify: 
    
